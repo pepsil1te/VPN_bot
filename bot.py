@@ -9,11 +9,17 @@ from datetime import datetime, timedelta
 from telegram import Update, ReplyKeyboardMarkup, KeyboardButton, ForceReply, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import Application, CommandHandler, MessageHandler, ContextTypes, filters, ConversationHandler, CallbackQueryHandler
 from apscheduler.schedulers.background import BackgroundScheduler
+import sys
+import signal
 
 # Configure logging
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level=logging.INFO
+    level=logging.INFO,
+    handlers=[
+        logging.FileHandler('bot.log'),
+        logging.StreamHandler(sys.stdout)
+    ]
 )
 logger = logging.getLogger(__name__)
 
@@ -874,50 +880,77 @@ def format_remaining_time(expiry_time: int) -> str:
     except:
         return "❓ Неизвестно"
 
+def signal_handler(signum, frame):
+    """Handle shutdown signals gracefully"""
+    logger.info("Received shutdown signal. Cleaning up...")
+    scheduler.shutdown()
+    sys.exit(0)
+
 def main():
     """Main function to run the bot"""
-    # Create application
-    application = Application.builder().token(BOT_TOKEN).build()
+    try:
+        # Set up signal handlers
+        signal.signal(signal.SIGINT, signal_handler)
+        signal.signal(signal.SIGTERM, signal_handler)
+        
+        # Create application
+        application = Application.builder().token(BOT_TOKEN).build()
 
-    # Add handlers
-    application.add_handler(CommandHandler("start", start))
-    application.add_handler(MessageHandler(filters.Regex('^📊 Статус$'), status))
-    application.add_handler(MessageHandler(filters.Regex('^🔑 Показать ключ$'), show_key))
-    application.add_handler(MessageHandler(filters.Regex('^❌ Удалить подключение$'), remove_connection))
-    application.add_handler(MessageHandler(filters.Regex('^🏆 Рейтинг$'), show_rating))
-    
-    # Add conversation handler for authentication
-    auth_handler = ConversationHandler(
-        entry_points=[MessageHandler(filters.Regex('^🔐 Авторизация$'), auth_start)],
-        states={
-            WAITING_FOR_TAG: [MessageHandler(filters.TEXT & ~filters.COMMAND, auth_tag)]
-        },
-        fallbacks=[CommandHandler('cancel', start)]
-    )
-    application.add_handler(auth_handler)
-    
-    application.add_handler(MessageHandler(filters.Regex('^❓ Помощь$'), help_command))
+        # Add handlers
+        application.add_handler(CommandHandler("start", start))
+        application.add_handler(MessageHandler(filters.Regex('^📊 Статус$'), status))
+        application.add_handler(MessageHandler(filters.Regex('^🔑 Показать ключ$'), show_key))
+        application.add_handler(MessageHandler(filters.Regex('^❌ Удалить подключение$'), remove_connection))
+        application.add_handler(MessageHandler(filters.Regex('^🏆 Рейтинг$'), show_rating))
+        
+        # Add conversation handler for authentication
+        auth_handler = ConversationHandler(
+            entry_points=[MessageHandler(filters.Regex('^🔐 Авторизация$'), auth_start)],
+            states={
+                WAITING_FOR_TAG: [MessageHandler(filters.TEXT & ~filters.COMMAND, auth_tag)]
+            },
+            fallbacks=[CommandHandler('cancel', start)]
+        )
+        application.add_handler(auth_handler)
+        
+        application.add_handler(MessageHandler(filters.Regex('^❓ Помощь$'), help_command))
 
-    # Add admin panel handlers
-    application.add_handler(CommandHandler("admin", admin_start))
-    application.add_handler(MessageHandler(filters.Regex('^👥 Список пользователей$'), admin_list_users))
-    application.add_handler(MessageHandler(filters.Regex('^❌ Выйти$'), admin_exit))
-    
-    # Add handler for other admin actions
-    application.add_handler(CallbackQueryHandler(admin_user_actions))
+        # Add admin panel handlers
+        application.add_handler(CommandHandler("admin", admin_start))
+        application.add_handler(MessageHandler(filters.Regex('^👥 Список пользователей$'), admin_list_users))
+        application.add_handler(MessageHandler(filters.Regex('^❌ Выйти$'), admin_exit))
+        application.add_handler(CallbackQueryHandler(admin_user_actions))
 
-    # Initialize scheduler
-    scheduler = BackgroundScheduler()
-    scheduler.add_job(
-        lambda: asyncio.run(check_expiring_subscriptions(application)),
-        'interval',
-        days=1,
-        next_run_time=datetime.now()
-    )
-    scheduler.start()
+        # Initialize scheduler with error handling
+        global scheduler
+        scheduler = BackgroundScheduler()
+        scheduler.add_job(
+            lambda: asyncio.run(check_expiring_subscriptions(application)),
+            'interval',
+            minutes=1,
+            next_run_time=datetime.now(),
+            max_instances=1,
+            coalesce=True,
+            misfire_grace_time=None
+        )
+        
+        # Start scheduler with error handling
+        try:
+            scheduler.start()
+            logger.info("Scheduler started successfully")
+        except Exception as e:
+            logger.error(f"Failed to start scheduler: {e}")
+            sys.exit(1)
 
-    # Start the bot
-    application.run_polling()
+        # Log successful startup
+        logger.info("Bot started successfully")
+        
+        # Start the bot
+        application.run_polling(allowed_updates=Update.ALL_TYPES)
+
+    except Exception as e:
+        logger.error(f"Critical error: {e}")
+        sys.exit(1)
 
 if __name__ == '__main__':
     main()
