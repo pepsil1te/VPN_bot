@@ -91,3 +91,187 @@
 2024-12-19 20:07:42,943 - apscheduler.executors.default - INFO - Job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:08:42 MSK)" executed successfully
 2024-12-19 20:07:45,006 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
 2024-12-19 20:07:55,162 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:08:05,268 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:08:15,407 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:08:25,506 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:08:35,579 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:08:42,444 - apscheduler.executors.default - INFO - Running job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:09:42 MSK)" (scheduled at 2024-12-19 20:08:42.428771+03:00)
+2024-12-19 20:08:42,988 - apscheduler.executors.default - INFO - Job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:09:42 MSK)" executed successfully
+2024-12-19 20:08:45,653 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:08:55,786 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:09:05,877 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:09:15,953 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:09:26,059 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:09:36,127 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:09:42,430 - apscheduler.executors.default - INFO - Running job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:10:42 MSK)" (scheduled at 2024-12-19 20:09:42.428771+03:00)
+2024-12-19 20:09:42,878 - apscheduler.executors.default - INFO - Job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:10:42 MSK)" executed successfully
+2024-12-19 20:09:46,226 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:09:56,287 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:10:06,400 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:10:16,487 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:10:26,629 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:10:36,753 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:10:42,433 - apscheduler.executors.default - INFO - Running job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:11:42 MSK)" (scheduled at 2024-12-19 20:10:42.428771+03:00)
+2024-12-19 20:10:42,859 - apscheduler.executors.default - INFO - Job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:11:42 MSK)" executed successfully
+2024-12-19 20:10:46,859 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:10:56,923 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:11:06,989 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:11:17,074 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:11:27,137 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:11:37,262 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:11:42,433 - apscheduler.executors.default - INFO - Running job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:12:42 MSK)" (scheduled at 2024-12-19 20:11:42.428771+03:00)
+2024-12-19 20:11:42,918 - apscheduler.executors.default - INFO - Job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:12:42 MSK)" executed successfully
+2024-12-19 20:11:47,596 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:11:57,661 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:12:07,757 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:12:17,831 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:12:27,916 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:12:37,985 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:12:42,439 - apscheduler.executors.default - INFO - Running job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:13:42 MSK)" (scheduled at 2024-12-19 20:12:42.428771+03:00)
+2024-12-19 20:12:42,826 - apscheduler.executors.default - INFO - Job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:13:42 MSK)" executed successfully
+2024-12-19 20:12:48,088 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:12:58,153 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:13:08,282 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:13:18,405 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:13:28,473 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:13:38,551 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:13:42,431 - apscheduler.executors.default - INFO - Running job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:14:42 MSK)" (scheduled at 2024-12-19 20:13:42.428771+03:00)
+2024-12-19 20:13:42,868 - apscheduler.executors.default - INFO - Job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:14:42 MSK)" executed successfully
+2024-12-19 20:13:48,634 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:13:58,753 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:14:08,823 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:14:18,892 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:14:28,958 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:14:35,523 - __main__ - INFO - Received shutdown signal. Cleaning up...
+2024-12-19 20:14:35,524 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-12-19 20:14:35,829 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:14:35,830 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2024-12-19 20:14:35,830 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-12-19 20:14:35,830 - telegram.ext.Application - INFO - Application.stop() complete
+2024-12-19 20:36:49,038 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-12-19 20:36:49,039 - apscheduler.scheduler - INFO - Added job "main.<locals>.<lambda>" to job store "default"
+2024-12-19 20:36:49,039 - apscheduler.scheduler - INFO - Scheduler started
+2024-12-19 20:36:49,040 - __main__ - INFO - Scheduler started successfully
+2024-12-19 20:36:49,041 - apscheduler.executors.default - INFO - Running job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:37:49 MSK)" (scheduled at 2024-12-19 20:36:49.037517+03:00)
+2024-12-19 20:36:49,041 - __main__ - INFO - Bot started successfully
+2024-12-19 20:36:49,499 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getMe "HTTP/1.1 200 OK"
+2024-12-19 20:36:49,529 - apscheduler.executors.default - INFO - Job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:37:49 MSK)" executed successfully
+2024-12-19 20:36:49,568 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/deleteWebhook "HTTP/1.1 200 OK"
+2024-12-19 20:36:49,569 - apscheduler.scheduler - INFO - Scheduler started
+2024-12-19 20:36:49,569 - telegram.ext.Application - INFO - Application started
+2024-12-19 20:36:59,314 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:36:59,969 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_application.py", line 1234, in process_update
+    await coroutine
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_basehandler.py", line 157, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Сергей\Documents\VPN_bot\bot.py", line 412, in start
+    keyboard = await get_keyboard(await check_subscription(update.effective_user.username))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object ReplyKeyboardMarkup can't be used in 'await' expression
+2024-12-19 20:37:03,620 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:37:04,075 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_application.py", line 1234, in process_update
+    await coroutine
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_basehandler.py", line 157, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Сергей\Documents\VPN_bot\bot.py", line 412, in start
+    keyboard = await get_keyboard(await check_subscription(update.effective_user.username))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object ReplyKeyboardMarkup can't be used in 'await' expression
+2024-12-19 20:37:13,419 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:37:13,858 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_application.py", line 1234, in process_update
+    await coroutine
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_basehandler.py", line 157, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Сергей\Documents\VPN_bot\bot.py", line 412, in start
+    keyboard = await get_keyboard(await check_subscription(update.effective_user.username))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: object ReplyKeyboardMarkup can't be used in 'await' expression
+2024-12-19 20:37:23,968 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:37:34,067 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:37:36,999 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:37:37,388 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_application.py", line 1234, in process_update
+    await coroutine
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_basehandler.py", line 157, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Сергей\Documents\VPN_bot\bot.py", line 412, in start
+    if subscription.get('found'):
+               ^^^^^^^^^^^^^^^^^^^
+TypeError: object ReplyKeyboardMarkup can't be used in 'await' expression
+2024-12-19 20:37:39,202 - __main__ - INFO - Received shutdown signal. Cleaning up...
+2024-12-19 20:37:39,202 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-12-19 20:37:42,337 - __main__ - INFO - Received shutdown signal. Cleaning up...
+2024-12-19 20:37:42,337 - __main__ - ERROR - Critical error: Scheduler is not running
+2024-12-19 20:37:44,417 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-12-19 20:37:44,419 - apscheduler.scheduler - INFO - Added job "main.<locals>.<lambda>" to job store "default"
+2024-12-19 20:37:44,419 - apscheduler.scheduler - INFO - Scheduler started
+2024-12-19 20:37:44,420 - __main__ - INFO - Scheduler started successfully
+2024-12-19 20:37:44,420 - apscheduler.executors.default - INFO - Running job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:38:44 MSK)" (scheduled at 2024-12-19 20:37:44.416584+03:00)
+2024-12-19 20:37:44,420 - __main__ - INFO - Bot started successfully
+2024-12-19 20:37:44,771 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getMe "HTTP/1.1 200 OK"
+2024-12-19 20:37:44,861 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/deleteWebhook "HTTP/1.1 200 OK"
+2024-12-19 20:37:44,862 - apscheduler.executors.default - INFO - Job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:38:44 MSK)" executed successfully
+2024-12-19 20:37:44,863 - apscheduler.scheduler - INFO - Scheduler started
+2024-12-19 20:37:44,863 - telegram.ext.Application - INFO - Application started
+2024-12-19 20:37:47,006 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:37:47,642 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-19 20:37:49,166 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:37:49,528 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-19 20:37:59,437 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:38:03,400 - __main__ - INFO - Received shutdown signal. Cleaning up...
+2024-12-19 20:38:03,400 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-12-19 20:38:03,799 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:38:03,800 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2024-12-19 20:38:03,801 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-12-19 20:38:03,801 - telegram.ext.Application - INFO - Application.stop() complete
+2024-12-19 20:38:31,334 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-12-19 20:38:31,336 - apscheduler.scheduler - INFO - Added job "main.<locals>.<lambda>" to job store "default"
+2024-12-19 20:38:31,336 - apscheduler.scheduler - INFO - Scheduler started
+2024-12-19 20:38:31,337 - __main__ - INFO - Scheduler started successfully
+2024-12-19 20:38:31,337 - apscheduler.executors.default - INFO - Running job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:39:31 MSK)" (scheduled at 2024-12-19 20:38:31.333749+03:00)
+2024-12-19 20:38:31,337 - __main__ - INFO - Bot started successfully
+2024-12-19 20:38:31,877 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getMe "HTTP/1.1 200 OK"
+2024-12-19 20:38:31,878 - apscheduler.executors.default - INFO - Job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:39:31 MSK)" executed successfully
+2024-12-19 20:38:31,979 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/deleteWebhook "HTTP/1.1 200 OK"
+2024-12-19 20:38:31,980 - apscheduler.scheduler - INFO - Scheduler started
+2024-12-19 20:38:31,981 - telegram.ext.Application - INFO - Application started
+2024-12-19 20:38:33,549 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:38:34,318 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-19 20:38:35,696 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:38:36,335 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-19 20:38:37,188 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:38:37,483 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-19 20:38:39,480 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:38:39,599 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-19 20:38:45,707 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:38:45,708 - __main__ - INFO - Attempting to authenticate with tag: ooostyx
+2024-12-19 20:38:46,216 - __main__ - INFO - Client info response: {'found': True, 'enable': True, 'up': 0, 'down': 0, 'total': 0, 'expiryTime': 0, 'client_id': '27edad3b-49d9-469b-b3e4-22014364ab2e', 'inbound': {'id': 5, 'up': 9581, 'down': 18052, 'total': 0, 'remark': 'subscribe', 'enable': True, 'expiryTime': 0, 'clientStats': [{'id': 68, 'inboundId': 5, 'enable': True, 'email': 'moneroambassador', 'up': 2197, 'down': 14566, 'expiryTime': 1740756148259, 'total': 0, 'reset': 0}, {'id': 69, 'inboundId': 5, 'enable': True, 'email': 'wvves', 'up': 0, 'down': 0, 'expiryTime': 1742397806638, 'total': 0, 'reset': 0}, {'id': 71, 'inboundId': 5, 'enable': True, 'email': 'ooostyx', 'up': 0, 'down': 0, 'expiryTime': 0, 'total': 0, 'reset': 0}, {'id': 72, 'inboundId': 5, 'enable': True, 'email': 'officialpinko', 'up': 0, 'down': 0, 'expiryTime': 0, 'total': 0, 'reset': 0}], 'listen': '', 'port': 431, 'protocol': 'vless', 'settings': '{\n  "clients": [\n    {\n      "email": "moneroambassador",\n      "enable": true,\n      "expiryTime": 1740756148259,\n      "flow": "xtls-rprx-vision",\n      "id": "16755374-7813-45e8-965b-ff2bacccff12",\n      "limitIp": 0,\n      "reset": 0,\n      "subId": "mqzg2wh6fvubnr7k",\n      "tgId": "",\n      "totalGB": 0\n    },\n    {\n      "email": "wvves",\n      "enable": true,\n      "expiryTime": 1742397806638,\n      "flow": "xtls-rprx-vision",\n      "id": "1f73895e-7adb-41d1-bc40-e5a50664bb49",\n      "limitIp": 0,\n      "reset": 0,\n      "subId": "dxt5nf9r45gb8m6k",\n      "tgId": "",\n      "totalGB": 0\n    },\n    {\n      "email": "ooostyx",\n      "enable": true,\n      "expiryTime": 0,\n      "flow": "",\n      "id": "27edad3b-49d9-469b-b3e4-22014364ab2e",\n      "limitIp": 0,\n      "reset": 0,\n      "subId": "gunn20cb9svk5jy0",\n      "tgId": "",\n      "totalGB": 0\n    },\n    {\n      "email": "officialpinko",\n      "enable": true,\n      "expiryTime": 0,\n      "flow": "",\n      "id": "7f5180d3-a385-49a5-a2e6-4a71f9d2b5e9",\n      "limitIp": 0,\n      "reset": 0,\n      "subId": "ygii0hh6egunxhbe",\n      "tgId": "",\n      "totalGB": 0\n    }\n  ],\n  "decryption": "none",\n  "fallbacks": []\n}', 'streamSettings': '{\n  "network": "tcp",\n  "security": "reality",\n  "externalProxy": [],\n  "realitySettings": {\n    "show": false,\n    "xver": 0,\n    "dest": "google.com:443",\n    "serverNames": [\n      "google.com",\n      "www.google.com"\n    ],\n    "privateKey": "gJrmQ4KnzUtoCIuXxk_YtcbfgyRryU69FJENaS3XSm8",\n    "minClient": "",\n    "maxClient": "",\n    "maxTimediff": 0,\n    "shortIds": [\n      "515dac3e"\n    ],\n    "settings": {\n      "publicKey": "kw5ob1HE0fHwpwhHotH0Eib0fC3KsufNcXUNLZ4oIE4",\n      "fingerprint": "chrome",\n      "serverName": "",\n      "spiderX": "/"\n    }\n  },\n  "tcpSettings": {\n    "acceptProxyProtocol": false,\n    "header": {\n      "type": "none"\n    }\n  }\n}', 'tag': 'inbound-431', 'sniffing': '{\n  "enabled": true,\n  "destOverride": [\n    "http",\n    "tls",\n    "quic",\n    "fakedns"\n  ],\n  "metadataOnly": false,\n  "routeOnly": false\n}'}, 'stream_settings': {'network': 'tcp', 'security': 'reality', 'externalProxy': [], 'realitySettings': {'show': False, 'xver': 0, 'dest': 'google.com:443', 'serverNames': ['google.com', 'www.google.com'], 'privateKey': 'gJrmQ4KnzUtoCIuXxk_YtcbfgyRryU69FJENaS3XSm8', 'minClient': '', 'maxClient': '', 'maxTimediff': 0, 'shortIds': ['515dac3e'], 'settings': {'publicKey': 'kw5ob1HE0fHwpwhHotH0Eib0fC3KsufNcXUNLZ4oIE4', 'fingerprint': 'chrome', 'serverName': '', 'spiderX': '/'}}, 'tcpSettings': {'acceptProxyProtocol': False, 'header': {'type': 'none'}}}}
+2024-12-19 20:38:46,218 - __main__ - INFO - Authentication successful for tag: ooostyx
+2024-12-19 20:38:46,653 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-19 20:38:47,527 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:38:48,087 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-19 20:38:58,083 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:39:08,177 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:39:18,269 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:39:28,388 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:39:31,347 - apscheduler.executors.default - INFO - Running job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:40:31 MSK)" (scheduled at 2024-12-19 20:39:31.333749+03:00)
+2024-12-19 20:39:31,750 - apscheduler.executors.default - INFO - Job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:40:31 MSK)" executed successfully
+2024-12-19 20:39:38,449 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:39:48,519 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:39:56,496 - __main__ - INFO - Received shutdown signal. Cleaning up...
+2024-12-19 20:39:56,496 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-12-19 20:39:56,811 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:39:56,812 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2024-12-19 20:39:56,813 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-12-19 20:39:56,813 - telegram.ext.Application - INFO - Application.stop() complete

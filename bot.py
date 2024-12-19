@@ -7,7 +7,7 @@ import uuid
 from io import BytesIO
 from datetime import datetime, timedelta
 from telegram import Update, ReplyKeyboardMarkup, KeyboardButton, ForceReply, InlineKeyboardMarkup, InlineKeyboardButton
-from telegram.ext import Application, CommandHandler, MessageHandler, ContextTypes, filters, ConversationHandler, CallbackQueryHandler
+from telegram.ext import Application, CommandHandler, MessageHandler, ContextTypes, filters, ConversationHandler, CallbackQueryHandler, PicklePersistence
 from apscheduler.schedulers.background import BackgroundScheduler
 import sys
 import signal
@@ -410,6 +410,13 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     subscription = await check_subscription(username)
     
     if subscription.get('found'):
+        # Automatically set VPN tag if subscription is found
+        context.user_data['vpn_tag'] = username
+        # Also save to bot_data as backup
+        if 'user_tags' not in context.bot_data:
+            context.bot_data['user_tags'] = {}
+        context.bot_data['user_tags'][str(update.effective_user.id)] = username
+        
         await update.message.reply_text(
             f"👋 Добро пожаловать, @{username}!\n"
             f"Ваша VPN подписка {('активна' if subscription.get('enable') else 'отключена')}. "
@@ -442,7 +449,13 @@ async def auth_tag(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     if client_info.get('found'):
         logger.info(f"Authentication successful for tag: {tag}")
+        # Save to persistent user_data
         context.user_data['vpn_tag'] = tag
+        # Also save to bot_data as backup
+        if 'user_tags' not in context.bot_data:
+            context.bot_data['user_tags'] = {}
+        context.bot_data['user_tags'][str(update.effective_user.id)] = tag
+        
         await update.message.reply_text(
             f"✅ Авторизация успешна!\nВаш тег: {tag}",
             reply_markup=get_keyboard(True)
@@ -746,12 +759,29 @@ async def show_rating(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
             return
 
+        # Get current user's tag from user_data
+        current_user = context.user_data.get('vpn_tag')
+        
+        # If not in user_data, try bot_data
+        if not current_user and 'user_tags' in context.bot_data:
+            current_user = context.bot_data['user_tags'].get(str(update.effective_user.id))
+            if current_user:
+                # Restore to user_data
+                context.user_data['vpn_tag'] = current_user
+
+        if not current_user:
+            await update.message.reply_text(
+                "❌ Не удалось определить ваш тег. Пожалуйста, авторизуйтесь заново.",
+                reply_markup=get_keyboard(False)
+            )
+            return
+
         # Get current user's tag
         current_user = context.user_data.get('vpn_tag')
         if not current_user:
             await update.message.reply_text(
                 "❌ Не удалось определить ваш тег. Пожалуйста, авторизуйтесь заново.",
-                reply_markup=get_keyboard(True)
+                reply_markup=get_keyboard(False)
             )
             return
 
@@ -893,8 +923,11 @@ def main():
         signal.signal(signal.SIGINT, signal_handler)
         signal.signal(signal.SIGTERM, signal_handler)
         
-        # Create application
-        application = Application.builder().token(BOT_TOKEN).build()
+        # Initialize persistence
+        persistence = PicklePersistence(filepath="bot_data.pickle")
+        
+        # Create application with persistence
+        application = Application.builder().token(BOT_TOKEN).persistence(persistence).build()
 
         # Add handlers
         application.add_handler(CommandHandler("start", start))
@@ -909,7 +942,9 @@ def main():
             states={
                 WAITING_FOR_TAG: [MessageHandler(filters.TEXT & ~filters.COMMAND, auth_tag)]
             },
-            fallbacks=[CommandHandler('cancel', start)]
+            fallbacks=[CommandHandler('cancel', start)],
+            persistent=True,
+            name='auth_conversation'
         )
         application.add_handler(auth_handler)
         
