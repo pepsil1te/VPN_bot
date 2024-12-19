@@ -547,18 +547,19 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE):
         days_left = (expiry_date - datetime.now()).days
         expiry_status = f"📅 Дата окончания: {expiry_date.strftime('%d.%m.%Y')}"
     
-    # Prepare status message
-    status_message = (
-        f"📊 Статус подписки:\n\n"
-        f"{'✅ Активна' if client_info.get('enable') else '❌ Отключена'}\n"
-        f"{expiry_status}\n"
-        f"📆 Осталось дней: {days_left}\n\n"
-        f"📈 Статистика трафика:\n"
-        f"⬆️ Отправлено: {up_gb:.2f} GB\n"
-        f"⬇️ Получено: {down_gb:.2f} GB"
-    )
+    # Prepare status message with better formatting
+    message = "📱 СТАТУС ПОДПИСКИ 📱\n"
+    message += "─────────────────\n\n"
+    message += f"{'🟢 Активна' if client_info.get('enable') else '🔴 Отключена'}\n"
+    message += f"{expiry_status}\n"
+    message += f"📆 Осталось дней: {days_left}\n\n"
+    message += "📊 СТАТИСТИКА ТРАФИКА 📊\n"
+    message += "─────────────────\n"
+    message += f"📥 Загружено: {down_gb:.2f} GB\n"
+    message += f"📤 Отправлено: {up_gb:.2f} GB\n"
+    message += "─────────────────"
     
-    await update.message.reply_text(status_message, reply_markup=get_keyboard(True))
+    await update.message.reply_text(message, reply_markup=get_keyboard(True))
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Help command handler"""
@@ -729,6 +730,96 @@ async def admin_exit(update: Update, context: ContextTypes.DEFAULT_TYPE):
         reply_markup=get_keyboard(await check_subscription(update.effective_user.username))
     )
 
+async def show_rating(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Show top-10 users by traffic usage"""
+    try:
+        if not vpn_panel.login():
+            await update.message.reply_text(
+                "❌ Ошибка подключения к панели",
+                reply_markup=get_keyboard(True)
+            )
+            return
+
+        # Get current user's tag
+        current_user = context.user_data.get('vpn_tag')
+        if not current_user:
+            await update.message.reply_text(
+                "❌ Не удалось определить ваш тег. Пожалуйста, авторизуйтесь заново.",
+                reply_markup=get_keyboard(True)
+            )
+            return
+
+        response = vpn_panel.session.post(f"{PANEL_URL}/panel/inbound/list")
+        if response.status_code != 200:
+            await update.message.reply_text(
+                "❌ Ошибка получения данных",
+                reply_markup=get_keyboard(True)
+            )
+            return
+
+        data = response.json()
+        users_traffic = []
+        
+        for inbound in data.get('obj', []):
+            for client in inbound.get('clientStats', []):
+                if client.get('email'):
+                    users_traffic.append({
+                        'username': client['email'],
+                        'total': client.get('down', 0) + client.get('up', 0)
+                    })
+
+        # Sort users by traffic
+        users_traffic.sort(key=lambda x: x['total'], reverse=True)
+        
+        # Get current user's position and traffic
+        user_position = next((i + 1 for i, user in enumerate(users_traffic) 
+                            if user['username'].strip() == current_user.strip()), None)
+        user_traffic = next((user['total'] for user in users_traffic 
+                           if user['username'].strip() == current_user.strip()), 0)
+
+        # Format message
+        message = "🏆 ТОП ПОЛЬЗОВАТЕЛЕЙ 🏆\n"
+        message += "─────────────────\n\n"
+        
+        if user_position:
+            position_emoji = get_position_emoji(user_position)
+            message += f"📊 Ваша позиция: {position_emoji} {user_position} место\n"
+            message += f"📈 Ваш трафик: {format_traffic(user_traffic)}\n\n"
+        
+        message += "⭐️ РЕЙТИНГ ТОП-10 ⭐️\n"
+        message += "─────────────────\n"
+
+        for i, user in enumerate(users_traffic[:10], 1):
+            position_emoji = get_position_emoji(i)
+            # Show full tag if it matches current user's tag
+            username = user['username']
+            if user['username'].strip() != current_user.strip():
+                if len(username) <= 3:
+                    username = username[0] + "*" * (len(username) - 1)
+                else:
+                    username = username[0] + "*" * (len(username) - 2) + username[-1]
+            
+            traffic = format_traffic(user['total'])
+            
+            if user['username'].strip() == current_user.strip():
+                message += f"{position_emoji} {i}. 👉 {username}\n   ┗━ {traffic}\n"
+            else:
+                message += f"{position_emoji} {i}. {username}\n   ┗━ {traffic}\n"
+
+        message += "─────────────────"
+
+        await update.message.reply_text(
+            message,
+            reply_markup=get_keyboard(True)
+        )
+
+    except Exception as e:
+        logger.error(f"Error showing rating: {e}")
+        await update.message.reply_text(
+            "❌ Произошла ошибка при получении рейтинга",
+            reply_markup=get_keyboard(True)
+        )
+
 def format_username(username: str, show_full: bool = False) -> str:
     """Format username to show only first and last characters"""
     if show_full:
@@ -747,73 +838,41 @@ def format_traffic(bytes_count: int) -> str:
         bytes_count /= 1024
     return f"{bytes_count:.2f} PB"
 
-async def show_rating(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Show top-10 users by traffic usage"""
+def get_position_emoji(position: int) -> str:
+    """Get emoji for position"""
+    if position == 1:
+        return "🥇"
+    elif position == 2:
+        return "🥈"
+    elif position == 3:
+        return "🥉"
+    return "🏅"
+
+def format_remaining_time(expiry_time: int) -> str:
+    """Format remaining time until expiry"""
     try:
-        if not vpn_panel.login():
-            await update.message.reply_text(
-                "❌ Ошибка подключения к панели",
-                reply_markup=get_keyboard(await check_subscription(update.effective_user.username))
-            )
-            return
-
-        # Get all users traffic data
-        headers = {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-            'X-Requested-With': 'XMLHttpRequest'
-        }
-
-        response = vpn_panel.session.post(f"{PANEL_URL}/panel/inbound/list", headers=headers)
-        if response.status_code != 200:
-            await update.message.reply_text(
-                "❌ Ошибка получения данных",
-                reply_markup=get_keyboard(await check_subscription(update.effective_user.username))
-            )
-            return
-
-        data = response.json()
-        users_traffic = []
+        if expiry_time == 0:
+            return "♾️ Бессрочная"
+            
+        expiry = datetime.fromtimestamp(expiry_time / 1000)
+        now = datetime.now()
         
-        for inbound in data.get('obj', []):
-            for client in inbound.get('clientStats', []):
-                if client.get('email'):
-                    users_traffic.append({
-                        'username': client['email'],
-                        'total': client.get('down', 0) + client.get('up', 0)
-                    })
-
-        # Sort users by traffic
-        users_traffic.sort(key=lambda x: x['total'], reverse=True)
+        if expiry < now:
+            return "❌ Истекла"
+            
+        delta = expiry - now
+        days = delta.days
+        hours = delta.seconds // 3600
+        minutes = (delta.seconds % 3600) // 60
         
-        # Get current user's position
-        current_user = update.effective_user.username
-        user_position = next((i + 1 for i, user in enumerate(users_traffic) 
-                            if user['username'].strip() == current_user.strip()), None)
-
-        # Format message
-        message = "🏆 Топ-10 пользователей по траффику:\n\n"
-        
-        if user_position:
-            message += f"Вы на {user_position} месте!\n\n"
-
-        for i, user in enumerate(users_traffic[:10], 1):
-            username = format_username(user['username'], 
-                                    show_full=user['username'].strip() == current_user.strip())
-            traffic = format_traffic(user['total'])
-            message += f"{i}. {username}: {traffic}\n"
-
-        await update.message.reply_text(
-            message,
-            reply_markup=get_keyboard(await check_subscription(current_user))
-        )
-
-    except Exception as e:
-        logger.error(f"Error showing rating: {e}")
-        await update.message.reply_text(
-            "❌ Произошла ошибка при получении рейтинга",
-            reply_markup=get_keyboard(await check_subscription(update.effective_user.username))
-        )
+        if days > 0:
+            return f"⏳ {days}д {hours}ч"
+        elif hours > 0:
+            return f"⏳ {hours}ч {minutes}м"
+        else:
+            return f"⏳ {minutes}м"
+    except:
+        return "❓ Неизвестно"
 
 def main():
     """Main function to run the bot"""
