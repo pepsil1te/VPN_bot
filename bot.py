@@ -24,7 +24,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Configuration
-PANEL_URL = "http://5.252.118.78:55001"
+PANEL_URL = "http://5.252.118.78:55001/r8d7ZhzmHxxkJvU/panel/"
 PANEL_USERNAME = "paneladmin"
 PANEL_PASSWORD = "cwzGdD3ygy6u"
 BOT_TOKEN = "7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU"
