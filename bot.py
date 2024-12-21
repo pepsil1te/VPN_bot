@@ -124,6 +124,7 @@ class VPNPanel:
             data = response.json()
             for inbound in data.get('obj', []):
                 settings = json.loads(inbound.get('settings', '{}'))
+                stream_settings = json.loads(inbound.get('streamSettings', '{}'))
                 clients = settings.get('clients', [])
                 
                 for client in clients:
@@ -140,14 +141,58 @@ class VPNPanel:
                             "down": client_stats.get('down', 0),
                             "expiryTime": client.get('expiryTime', 0),
                             "total": client.get('total', 0),
-                            "id": client.get('id', '')
+                            "id": client.get('id', ''),
+                            "inbound": inbound,
+                            "stream_settings": stream_settings
                         }
             
             return {"found": False}
         except Exception as e:
             logger.error(f"Error getting client info: {e}")
             return {"found": False}
-    
+
+    def get_client_key(self, client_info: dict) -> str:
+        """Generate vless key from client info"""
+        try:
+            if not client_info.get('found') or not client_info.get('inbound'):
+                return None
+
+            inbound = client_info['inbound']
+            stream_settings = client_info.get('stream_settings', {})
+            
+            protocol = inbound.get('protocol', '')
+            port = inbound.get('port', '')
+            client_id = client_info.get('id', '')
+            
+            if not all([protocol, port, client_id]):
+                return None
+
+            # Get network settings
+            network = stream_settings.get('network', '')
+            security = stream_settings.get('security', '')
+            
+            # Build the key
+            key = f"{protocol}://{client_id}@{PANEL_URL.split('://')[1].split('/')[0]}:{port}"
+            params = []
+            
+            # Add encryption if present
+            if security:
+                params.append(f"security={security}")
+            
+            # Add type if present
+            if network:
+                params.append(f"type={network}")
+            
+            # Add parameters to URL
+            if params:
+                key += "?" + "&".join(params)
+            
+            return key
+
+        except Exception as e:
+            logger.error(f"Error generating client key: {e}")
+            return None
+
     def get_user_list(self):
         """Get list of all users"""
         if not self.logged_in and not self.login():
@@ -163,6 +208,7 @@ class VPNPanel:
             
             for inbound in data.get('obj', []):
                 settings = json.loads(inbound.get('settings', '{}'))
+                stream_settings = json.loads(inbound.get('streamSettings', '{}'))
                 clients = settings.get('clients', [])
                 client_stats = inbound.get('clientStats', [])
                 
@@ -186,34 +232,6 @@ class VPNPanel:
         except Exception as e:
             logger.error(f"Error getting user list: {e}")
             return []
-
-    def get_client_key(self, client_info: dict) -> str:
-        """Generate vless key from client info"""
-        try:
-            inbound = client_info['inbound']
-            stream_settings = client_info['stream_settings']
-            client_id = client_info['client_id']
-
-            public_key = stream_settings["realitySettings"]["settings"]["publicKey"]
-            fingerprint = stream_settings["realitySettings"]["settings"]["fingerprint"]
-            sni = stream_settings["realitySettings"]["dest"].split(":")[0]
-            short_id = stream_settings["realitySettings"]["shortIds"][0]
-            
-            raw_key = (
-                f"vless://{client_id}@5.252.118.78:{inbound['port']}"
-                f"?type={stream_settings['network']}"
-                f"&security={stream_settings['security']}"
-                f"&pbk={public_key}"
-                f"&fp={fingerprint}"
-                f"&sni={sni}"
-                f"&sid={short_id}"
-                f"&spx=%2F"
-            )
-            
-            return raw_key
-        except Exception as e:
-            logger.error(f"Error generating client key: {e}")
-            return None
 
     def add_user(self, email: str, expiry_time: int = 0) -> bool:
         """Add new user to VPN panel"""
@@ -486,39 +504,56 @@ async def auth_tag(update: Update, context: ContextTypes.DEFAULT_TYPE):
     return ConversationHandler.END
 
 async def show_key(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Show VPN key and QR code"""
-    user = update.effective_user
-    username = context.user_data.get('vpn_tag') or user.username
+    """Show user's VPN key"""
+    username = context.user_data.get('vpn_tag') or update.effective_user.username
     
     if not username:
         await update.message.reply_text(
-            "⚠️ Пожалуйста, сначала авторизуйтесь.",
+            "⚠️ Пожалуйста, установите имя пользователя в Telegram или авторизуйтесь с помощью тега.",
             reply_markup=get_keyboard(False)
         )
         return
-
+    
     client_info = vpn_panel.get_client_info(username)
+    
     if not client_info.get('found'):
         await update.message.reply_text(
-            "❌ Подписка не найдена. Пожалуйста, проверьте статус подписки.",
+            "❌ Подписка не найдена. Пожалуйста, проверьте статус подписки или авторизуйтесь с помощью тега.",
             reply_markup=get_keyboard(False)
         )
         return
-
-    key = vpn_panel.get_client_key(client_info)
-    if not key:
+    
+    if not client_info.get('enable'):
         await update.message.reply_text(
-            "❌ Ошибка при генерации ключа. Пожалуйста, обратитесь к менеджеру @ooostyx",
+            "❌ Ваша подписка отключена. Пожалуйста, обратитесь к администратору.",
             reply_markup=get_keyboard(True)
         )
         return
-
-    # Send QR code
-    qr = await generate_qr(key)
+    
+    key = vpn_panel.get_client_key(client_info)
+    if not key:
+        await update.message.reply_text(
+            "❌ Не удалось сгенерировать ключ. Пожалуйста, обратитесь к администратору.",
+            reply_markup=get_keyboard(True)
+        )
+        return
+    
+    # Generate QR code
+    qr = qrcode.QRCode(version=1, box_size=10, border=5)
+    qr.add_data(key)
+    qr.make(fit=True)
+    
+    img = qr.make_image(fill_color="black", back_color="white")
+    bio = BytesIO()
+    img.save(bio, 'PNG')
+    bio.seek(0)
+    
+    # Send QR code and key in one message
     await update.message.reply_photo(
-        photo=qr,
-        caption=f"🔑 Ваш ключ подключения:\n`{key}`\n\nДля подключения отсканируйте QR-код или скопируйте ключ.",
-        parse_mode='Markdown'
+        bio,
+        caption=f"🔑 Ваш ключ подключения:\n`{key}`\n\n📱 Отсканируйте QR-код или скопируйте ключ для подключения",
+        parse_mode='Markdown',
+        reply_markup=get_keyboard(True)
     )
 
 async def remove_connection(update: Update, context: ContextTypes.DEFAULT_TYPE):
