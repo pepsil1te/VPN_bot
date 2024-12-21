@@ -820,3 +820,220 @@ telegram.error.NetworkError: httpx.ConnectError: All connection attempts failed
 2024-12-19 20:41:36,657 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
 2024-12-19 20:41:36,657 - apscheduler.scheduler - INFO - Scheduler has been shut down
 2024-12-19 20:41:36,658 - telegram.ext.Application - INFO - Application.stop() complete
+2024-12-21 13:09:32,313 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-12-21 13:09:32,315 - apscheduler.scheduler - INFO - Added job "main.<locals>.<lambda>" to job store "default"
+2024-12-21 13:09:32,315 - apscheduler.scheduler - INFO - Scheduler started
+2024-12-21 13:09:32,316 - __main__ - INFO - Scheduler started successfully
+2024-12-21 13:09:32,316 - apscheduler.executors.default - INFO - Running job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-21 13:10:32 MSK)" (scheduled at 2024-12-21 13:09:32.312362+03:00)
+2024-12-21 13:09:32,316 - __main__ - INFO - Bot started successfully
+2024-12-21 13:09:32,614 - __main__ - ERROR - Failed to login to VPN panel during subscription check
+2024-12-21 13:09:32,615 - apscheduler.executors.default - INFO - Job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-21 13:10:32 MSK)" executed successfully
+2024-12-21 13:09:32,690 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getMe "HTTP/1.1 200 OK"
+2024-12-21 13:09:32,753 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/deleteWebhook "HTTP/1.1 200 OK"
+2024-12-21 13:09:32,754 - apscheduler.scheduler - INFO - Scheduler started
+2024-12-21 13:09:32,754 - telegram.ext.Application - INFO - Application started
+2024-12-21 13:09:36,803 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:09:37,084 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-21 13:09:40,816 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 409 Conflict"
+2024-12-21 13:09:40,816 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-12-21 13:09:40,817 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-12-21 13:09:51,876 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:09:56,446 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 409 Conflict"
+2024-12-21 13:09:56,446 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-12-21 13:09:56,447 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-12-21 13:10:07,527 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:10:13,749 - __main__ - INFO - Received shutdown signal. Cleaning up...
+2024-12-21 13:10:13,749 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-12-21 13:10:14,044 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:10:14,044 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2024-12-21 13:10:14,045 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-12-21 13:10:14,045 - telegram.ext.Application - INFO - Application.stop() complete
+2024-12-21 13:10:18,108 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-12-21 13:10:18,109 - apscheduler.scheduler - INFO - Added job "main.<locals>.<lambda>" to job store "default"
+2024-12-21 13:10:18,109 - apscheduler.scheduler - INFO - Scheduler started
+2024-12-21 13:10:18,110 - __main__ - INFO - Scheduler started successfully
+2024-12-21 13:10:18,110 - apscheduler.executors.default - INFO - Running job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-21 13:11:18 MSK)" (scheduled at 2024-12-21 13:10:18.107288+03:00)
+2024-12-21 13:10:18,110 - __main__ - INFO - Bot started successfully
+2024-12-21 13:10:18,278 - __main__ - ERROR - Failed to login to VPN panel during subscription check
+2024-12-21 13:10:18,279 - apscheduler.executors.default - INFO - Job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-21 13:11:18 MSK)" executed successfully
+2024-12-21 13:10:18,507 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getMe "HTTP/1.1 200 OK"
+2024-12-21 13:10:18,619 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/deleteWebhook "HTTP/1.1 200 OK"
+2024-12-21 13:10:18,620 - apscheduler.scheduler - INFO - Scheduler started
+2024-12-21 13:10:18,620 - telegram.ext.Application - INFO - Application started
+2024-12-21 13:10:21,386 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:10:22,003 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-21 13:10:23,671 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:10:23,783 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-21 13:10:24,854 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:10:24,855 - __main__ - INFO - Attempting to authenticate with tag: pc
+2024-12-21 13:10:25,021 - __main__ - INFO - Client info response: {'found': False, 'error': 'Login failed'}
+2024-12-21 13:10:25,021 - __main__ - INFO - Authentication failed for tag: pc
+2024-12-21 13:10:25,197 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-21 13:10:35,107 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:10:45,174 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:10:47,728 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 409 Conflict"
+2024-12-21 13:10:47,729 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-12-21 13:10:47,729 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-12-21 13:10:58,811 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:11:08,879 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:11:18,111 - apscheduler.executors.default - INFO - Running job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-21 13:12:18 MSK)" (scheduled at 2024-12-21 13:11:18.107288+03:00)
+2024-12-21 13:11:18,289 - __main__ - ERROR - Failed to login to VPN panel during subscription check
+2024-12-21 13:11:18,290 - apscheduler.executors.default - INFO - Job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-21 13:12:18 MSK)" executed successfully
+2024-12-21 13:11:18,954 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:11:22,016 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 409 Conflict"
+2024-12-21 13:11:22,016 - telegram.ext.Updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-12-21 13:11:22,017 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 381, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-12-21 13:11:33,103 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:11:43,175 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:11:48,917 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:11:49,790 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-21 13:11:59,198 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:12:09,268 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:12:18,109 - apscheduler.executors.default - INFO - Running job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-21 13:13:18 MSK)" (scheduled at 2024-12-21 13:12:18.107288+03:00)
+2024-12-21 13:12:18,330 - __main__ - ERROR - Failed to login to VPN panel during subscription check
+2024-12-21 13:12:18,331 - apscheduler.executors.default - INFO - Job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-21 13:13:18 MSK)" executed successfully
+2024-12-21 13:12:19,335 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:12:29,399 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:12:39,529 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:12:49,595 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:12:59,676 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:13:09,742 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:13:18,121 - apscheduler.executors.default - INFO - Running job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-21 13:14:18 MSK)" (scheduled at 2024-12-21 13:13:18.107288+03:00)
+2024-12-21 13:13:18,306 - __main__ - ERROR - Failed to login to VPN panel during subscription check
+2024-12-21 13:13:18,306 - apscheduler.executors.default - INFO - Job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-21 13:14:18 MSK)" executed successfully
+2024-12-21 13:13:20,079 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:13:30,148 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:13:32,715 - __main__ - INFO - Received shutdown signal. Cleaning up...
+2024-12-21 13:13:32,716 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-12-21 13:13:36,039 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-21 13:13:36,040 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2024-12-21 13:13:36,040 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-12-21 13:13:36,040 - telegram.ext.Application - INFO - Application.stop() complete

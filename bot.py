@@ -24,7 +24,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Configuration
-PANEL_URL = "http://5.252.118.78:55001/r8d7ZhzmHxxkJvU/panel/"
+PANEL_URL = "http://5.252.118.78:55001/r8d7ZhzmHxxkJvU"  # Base URL
 PANEL_USERNAME = "paneladmin"
 PANEL_PASSWORD = "cwzGdD3ygy6u"
 BOT_TOKEN = "7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU"
@@ -96,79 +96,96 @@ def get_user_actions_keyboard(email):
 class VPNPanel:
     def __init__(self):
         self.session = requests.Session()
-        
+        self.logged_in = False
+    
     def login(self):
-        """Login to VPN panel and return session cookies"""
+        """Login to panel"""
         try:
             response = self.session.post(
                 f"{PANEL_URL}/login",
-                data={
-                    'username': PANEL_USERNAME,
-                    'password': PANEL_PASSWORD
-                }
+                json={"username": PANEL_USERNAME, "password": PANEL_PASSWORD}
             )
-            return response.status_code == 200
-        except Exception as e:
-            logger.error(f"Login error: {e}")
+            self.logged_in = response.status_code == 200
+            return self.logged_in
+        except:
+            self.logged_in = False
             return False
-
-    def get_client_info(self, username: str) -> dict:
-        """Get client information from VPN panel"""
+    
+    def get_client_info(self, username):
+        """Get client info from panel"""
+        if not self.logged_in and not self.login():
+            return {"found": False}
+        
         try:
-            if not self.login():
-                return {'found': False, 'error': 'Login failed'}
-
-            headers = {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                'X-Requested-With': 'XMLHttpRequest'
-            }
-
-            response = self.session.post(f"{PANEL_URL}/panel/inbound/list", headers=headers)
-            if response.status_code == 200:
-                data = response.json()
-                for inbound in data.get('obj', []):
-                    # Check in clientStats
-                    for client in inbound.get('clientStats', []):
-                        if client.get('email', '').strip() == username.strip():
-                            # Get full client info from settings
-                            settings = json.loads(inbound.get('settings', '{}'))
-                            stream_settings = json.loads(inbound.get('streamSettings', '{}'))
-                            client_full = next(
-                                (c for c in settings.get('clients', []) if c.get('email', '').strip() == username.strip()),
-                                {}
-                            )
-                            return {
-                                'found': True,
-                                'enable': client.get('enable', False),
-                                'up': client.get('up', 0),
-                                'down': client.get('down', 0),
-                                'total': client.get('total', 0),
-                                'expiryTime': client.get('expiryTime', 0),
-                                'client_id': client_full.get('id', ''),
-                                'inbound': inbound,
-                                'stream_settings': stream_settings
-                            }
-                    
-                    # Also check in settings for additional info
-                    settings = json.loads(inbound.get('settings', '{}'))
-                    for client in settings.get('clients', []):
-                        if client.get('email', '').strip() == username.strip():
-                            stream_settings = json.loads(inbound.get('streamSettings', '{}'))
-                            return {
-                                'found': True,
-                                'enable': client.get('enable', False),
-                                'total': client.get('total', 0),
-                                'expiryTime': client.get('expiryTime', 0),
-                                'limitIp': client.get('limitIp', 0),
-                                'client_id': client.get('id', ''),
-                                'inbound': inbound,
-                                'stream_settings': stream_settings
-                            }
-            return {'found': False}
+            response = self.session.post(f"{PANEL_URL}/panel/inbound/list")
+            if response.status_code != 200:
+                return {"found": False}
+            
+            data = response.json()
+            for inbound in data.get('obj', []):
+                settings = json.loads(inbound.get('settings', '{}'))
+                clients = settings.get('clients', [])
+                
+                for client in clients:
+                    if client.get('email', '').strip() == username.strip():
+                        client_stats = next(
+                            (stat for stat in inbound.get('clientStats', [])
+                             if stat.get('email', '').strip() == username.strip()),
+                            {}
+                        )
+                        return {
+                            "found": True,
+                            "enable": client.get('enable', False),
+                            "up": client_stats.get('up', 0),
+                            "down": client_stats.get('down', 0),
+                            "expiryTime": client.get('expiryTime', 0),
+                            "total": client.get('total', 0),
+                            "id": client.get('id', '')
+                        }
+            
+            return {"found": False}
         except Exception as e:
             logger.error(f"Error getting client info: {e}")
-            return {'found': False, 'error': str(e)}
+            return {"found": False}
+    
+    def get_user_list(self):
+        """Get list of all users"""
+        if not self.logged_in and not self.login():
+            return []
+        
+        try:
+            response = self.session.post(f"{PANEL_URL}/panel/inbound/list")
+            if response.status_code != 200:
+                return []
+            
+            data = response.json()
+            users = []
+            
+            for inbound in data.get('obj', []):
+                settings = json.loads(inbound.get('settings', '{}'))
+                clients = settings.get('clients', [])
+                client_stats = inbound.get('clientStats', [])
+                
+                for client in clients:
+                    email = client.get('email', '').strip()
+                    stats = next(
+                        (stat for stat in client_stats if stat.get('email', '').strip() == email),
+                        {}
+                    )
+                    
+                    users.append({
+                        'email': email,
+                        'enable': client.get('enable', False),
+                        'up': stats.get('up', 0),
+                        'down': stats.get('down', 0),
+                        'expiryTime': client.get('expiryTime', 0),
+                        'total': client.get('total', 0)
+                    })
+            
+            return users
+        except Exception as e:
+            logger.error(f"Error getting user list: {e}")
+            return []
 
     def get_client_key(self, client_info: dict) -> str:
         """Generate vless key from client info"""
