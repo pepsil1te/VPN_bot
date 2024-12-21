@@ -275,3 +275,548 @@ TypeError: object ReplyKeyboardMarkup can't be used in 'await' expression
 2024-12-19 20:39:56,812 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
 2024-12-19 20:39:56,813 - apscheduler.scheduler - INFO - Scheduler has been shut down
 2024-12-19 20:39:56,813 - telegram.ext.Application - INFO - Application.stop() complete
+2024-12-19 20:40:17,799 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-12-19 20:40:17,800 - apscheduler.scheduler - INFO - Added job "main.<locals>.<lambda>" to job store "default"
+2024-12-19 20:40:17,800 - apscheduler.scheduler - INFO - Scheduler started
+2024-12-19 20:40:17,801 - __main__ - INFO - Scheduler started successfully
+2024-12-19 20:40:17,801 - apscheduler.executors.default - INFO - Running job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:41:17 MSK)" (scheduled at 2024-12-19 20:40:17.799069+03:00)
+2024-12-19 20:40:17,801 - __main__ - INFO - Bot started successfully
+2024-12-19 20:40:18,213 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getMe "HTTP/1.1 200 OK"
+2024-12-19 20:40:18,272 - apscheduler.executors.default - INFO - Job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:41:17 MSK)" executed successfully
+2024-12-19 20:40:18,305 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/deleteWebhook "HTTP/1.1 200 OK"
+2024-12-19 20:40:18,306 - apscheduler.scheduler - INFO - Scheduler started
+2024-12-19 20:40:18,306 - telegram.ext.Application - INFO - Application started
+2024-12-19 20:40:20,297 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:40:21,208 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-19 20:40:21,995 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:40:22,582 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-19 20:40:26,146 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:40:26,800 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-19 20:40:28,946 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:40:29,114 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-19 20:40:30,056 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:40:30,256 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-19 20:40:32,587 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:40:32,588 - __main__ - INFO - Attempting to authenticate with tag: pc
+2024-12-19 20:40:33,085 - __main__ - INFO - Client info response: {'found': True, 'enable': True, 'up': 9752290246, 'down': 502002282582, 'total': 0, 'expiryTime': 0, 'client_id': 'c92480e0-303e-4b9f-b440-5e515cb60339', 'inbound': {'id': 2, 'up': 20533001665, 'down': 1172143065395, 'total': 0, 'remark': 'pc', 'enable': True, 'expiryTime': 0, 'clientStats': [{'id': 2, 'inboundId': 2, 'enable': True, 'email': 'pc', 'up': 9752290246, 'down': 502002282582, 'expiryTime': 0, 'total': 0, 'reset': 0}, {'id': 16, 'inboundId': 2, 'enable': True, 'email': 'raul', 'up': 377906877, 'down': 22068169537, 'expiryTime': 0, 'total': 0, 'reset': 0}, {'id': 18, 'inboundId': 2, 'enable': True, 'email': 'neka', 'up': 7141527157, 'down': 620858208506, 'expiryTime': 0, 'total': 0, 'reset': 0}, {'id': 33, 'inboundId': 2, 'enable': True, 'email': 'tv', 'up': 44428343, 'down': 4981652754, 'expiryTime': 0, 'total': 0, 'reset': 0}, {'id': 53, 'inboundId': 2, 'enable': True, 'email': 'ruspc', 'up': 478732624, 'down': 18650399894, 'expiryTime': 0, 'total': 0, 'reset': 0}, {'id': 61, 'inboundId': 2, 'enable': True, 'email': 'margo_pc', 'up': 34431230, 'down': 2852360075, 'expiryTime': 0, 'total': 0, 'reset': 0}], 'listen': '', 'port': 433, 'protocol': 'vless', 'settings': '{\n  "clients": [\n    {\n      "email": "pc",\n      "enable": true,\n      "expiryTime": 0,\n      "flow": "xtls-rprx-vision",\n      "id": "c92480e0-303e-4b9f-b440-5e515cb60339",\n      "limitIp": 0,\n      "reset": 0,\n      "subId": "xudbr8m5s1v4g7nw",\n      "tgId": 760360583,\n      "totalGB": 0\n    },\n    {\n      "email": "raul",\n      "enable": true,\n      "expiryTime": 0,\n      "flow": "xtls-rprx-vision",\n      "id": "04ce7b33-3a44-46df-add2-dcadcfcdabef",\n      "limitIp": 0,\n      "reset": 0,\n      "subId": "idiaydle070gl2jx",\n      "tgId": "",\n      "totalGB": 0\n    },\n    {\n      "email": "neka",\n      "enable": true,\n      "expiryTime": 0,\n      "flow": "xtls-rprx-vision",\n      "id": "40489820-ff02-4c10-8214-95fdd4cae431",\n      "limitIp": 0,\n      "reset": 0,\n      "subId": "94sonyy4ldp7jwzy",\n      "tgId": "",\n      "totalGB": 0\n    },\n    {\n      "email": "tv",\n      "enable": true,\n      "expiryTime": 0,\n      "flow": "xtls-rprx-vision",\n      "id": "bee31c6a-52db-4f9f-b129-fd2dac59dd3d",\n      "limitIp": 0,\n      "reset": 0,\n      "subId": "7bjzskvmdvfzziab",\n      "tgId": "",\n      "totalGB": 0\n    },\n    {\n      "email": "ruspc",\n      "enable": true,\n      "expiryTime": 0,\n      "flow": "xtls-rprx-vision",\n      "id": "c90c841c-6399-4e6c-a84f-c632261ec13e",\n      "limitIp": 0,\n      "reset": 0,\n      "subId": "b40kkw7k56m5arbx",\n      "tgId": "",\n      "totalGB": 0\n    },\n    {\n      "email": "margo_pc",\n      "enable": true,\n      "expiryTime": 0,\n      "flow": "xtls-rprx-vision",\n      "id": "26d31567-49bd-4900-b4cd-27d63c5463eb",\n      "limitIp": 0,\n      "reset": 0,\n      "subId": "5nmm29pzu8q86jz1",\n      "tgId": "",\n      "totalGB": 0\n    }\n  ],\n  "decryption": "none",\n  "fallbacks": []\n}', 'streamSettings': '{\n  "network": "tcp",\n  "security": "reality",\n  "externalProxy": [],\n  "realitySettings": {\n    "show": false,\n    "xver": 0,\n    "dest": "google.com:443",\n    "serverNames": [\n      "google.com",\n      "www.google.com"\n    ],\n    "privateKey": "SDvbKElOq4RaqBtGikAgSas21EXpKVe3N5mfgBbBD2k",\n    "minClient": "",\n    "maxClient": "",\n    "maxTimediff": 0,\n    "shortIds": [\n      "564b00f3"\n    ],\n    "settings": {\n      "publicKey": "-Y4_TM9YnqzhNt5u0l8Qpzo-ra6vrIhLjwdpPwtnFno",\n      "fingerprint": "chrome",\n      "serverName": "",\n      "spiderX": "/"\n    }\n  },\n  "tcpSettings": {\n    "acceptProxyProtocol": false,\n    "header": {\n      "type": "none"\n    }\n  }\n}', 'tag': 'inbound-433', 'sniffing': '{\n  "enabled": true,\n  "destOverride": [\n    "http",\n    "tls",\n    "quic",\n    "fakedns"\n  ],\n  "metadataOnly": false,\n  "routeOnly": false\n}'}, 'stream_settings': {'network': 'tcp', 'security': 'reality', 'externalProxy': [], 'realitySettings': {'show': False, 'xver': 0, 'dest': 'google.com:443', 'serverNames': ['google.com', 'www.google.com'], 'privateKey': 'SDvbKElOq4RaqBtGikAgSas21EXpKVe3N5mfgBbBD2k', 'minClient': '', 'maxClient': '', 'maxTimediff': 0, 'shortIds': ['564b00f3'], 'settings': {'publicKey': '-Y4_TM9YnqzhNt5u0l8Qpzo-ra6vrIhLjwdpPwtnFno', 'fingerprint': 'chrome', 'serverName': '', 'spiderX': '/'}}, 'tcpSettings': {'acceptProxyProtocol': False, 'header': {'type': 'none'}}}}
+2024-12-19 20:40:33,087 - __main__ - INFO - Authentication successful for tag: pc
+2024-12-19 20:40:33,303 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-19 20:40:34,229 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:40:34,945 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-19 20:40:36,743 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:40:36,947 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-19 20:40:41,651 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:40:42,934 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-19 20:40:44,516 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:40:45,145 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/sendMessage "HTTP/1.1 200 OK"
+2024-12-19 20:40:55,115 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:41:05,182 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:41:15,313 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7730268619:AAHzrMIgG0VWI4swC-5sIq6J45bRLJnm9lU/getUpdates "HTTP/1.1 200 OK"
+2024-12-19 20:41:17,810 - apscheduler.executors.default - INFO - Running job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:42:17 MSK)" (scheduled at 2024-12-19 20:41:17.799069+03:00)
+2024-12-19 20:41:18,267 - apscheduler.executors.default - INFO - Job "main.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2024-12-19 20:42:17 MSK)" executed successfully
+2024-12-19 20:41:18,345 - telegram.ext.Updater - ERROR - Error while getting Updates: httpx.RemoteProtocolError: Server disconnected without sending a response.
+2024-12-19 20:41:18,346 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\http_proxy.py", line 343, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\http11.py", line 136, in handle_async_request
+    raise exc
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\http11.py", line 231, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\Сергей\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 292, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.RemoteProtocolError: Server disconnected without sending a response.
+2024-12-19 20:41:21,399 - telegram.ext.Updater - ERROR - Error while getting Updates: httpx.ConnectError: All connection attempts failed
+2024-12-19 20:41:21,399 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\http_proxy.py", line 288, in handle_async_request
+    connect_response = await self._connection.handle_async_request(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_backends\auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\Сергей\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\Сергей\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 292, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: All connection attempts failed
+2024-12-19 20:41:24,965 - telegram.ext.Updater - ERROR - Error while getting Updates: httpx.ConnectError: All connection attempts failed
+2024-12-19 20:41:24,965 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\http_proxy.py", line 288, in handle_async_request
+    connect_response = await self._connection.handle_async_request(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_backends\auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\Сергей\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\Сергей\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 292, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: All connection attempts failed
+2024-12-19 20:41:29,277 - telegram.ext.Updater - ERROR - Error while getting Updates: httpx.ConnectError: All connection attempts failed
+2024-12-19 20:41:29,277 - telegram.ext.Application - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\http_proxy.py", line 288, in handle_async_request
+    connect_response = await self._connection.handle_async_request(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_backends\auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\Сергей\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\Сергей\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 688, in _network_loop_retry
+    if not await action_cb():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 384, in polling_action_cb
+    raise exc
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 373, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 292, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: All connection attempts failed
+2024-12-19 20:41:34,599 - __main__ - INFO - Received shutdown signal. Cleaning up...
+2024-12-19 20:41:34,599 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-12-19 20:41:36,649 - telegram.ext.Updater - ERROR - Error while calling `get_updates` one more time to mark all fetched updates as read: %s. Suppressing error to ensure graceful shutdown. When polling for updates is restarted, updates may be fetched again. Please adjust timeouts via `ApplicationBuilder` or the parameter `get_updates_request` of `Bot`.
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\http_proxy.py", line 288, in handle_async_request
+    connect_response = await self._connection.handle_async_request(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_async\connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_backends\auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_backends\anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\Сергей\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 268, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 365, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\Сергей\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_updater.py", line 433, in _get_updates_cleanup
+    await self.bot.get_updates(
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 558, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 3584, in get_updates
+    await self._post(
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 340, in _request_wrapper
+    raise exc
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_baserequest.py", line 330, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Сергей\Documents\VPN_bot\.venv\Lib\site-packages\telegram\request\_httpxrequest.py", line 292, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: All connection attempts failed
+2024-12-19 20:41:36,657 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2024-12-19 20:41:36,657 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-12-19 20:41:36,658 - telegram.ext.Application - INFO - Application.stop() complete
